@@ -22,3 +22,21 @@ Check out my YouTube Channel: [Eternally Surprised](https://www.youtube.com/@Ete
 ## LaTeX Requirements
 I suggest to use the MikTex-Distribution to install LaTeX and the stuff around it. Furthermore, I do use TeXstudio for editing, so I can confirm the setup works with this toolchain. You should have ARARA installed and set up (there are plenty of explanations on how to do this which I won't repeat here as they will be very dependent on your toolchain, etc.)
 
+## How to use it
+# One-Time Setup
+- Open the Settings-files in the _LatexGlobal_ folder and change the _\companyName_ command to whatever you or your company are called.
+- Edit the glossary entry files in the _LatexGlobal_ folder to contain your global entries which you need in multiple documents.
+- Edit the default bibliography accordingly.
+- Replace the _CompanyLogo.png_ inside the _images_ folder with your own graphic.
+# Per-Document Actions
+- Rename the document folder so it makes sense to you.
+- Rename the actual main document _MainDocument_RenameThis.tex_ to whatever name you like.
+- Open said main document file and edit your _doctype_ and _doctitle_ (e.g. to "Specification" and "Awesome Software 2.0")
+- You do NOT have to change the following files:
+  - 99_Glossary
+  - 99_Literature
+  - 99_Index
+  - 00_Abbreviations
+- You _might_ want to change
+  - 00_Titlepage
+- Then add your chapter files, edit them and later on include them in the main document where you need them.
