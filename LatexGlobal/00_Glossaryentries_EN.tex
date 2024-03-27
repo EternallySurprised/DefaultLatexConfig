@@ -1,0 +1,108 @@
+%% Abbreviations with reference to the index
+\newacronym{rcp}{RCP}{\gls{RCP}}
+\newacronym{hil}{HiL}{\gls{HIL}}
+\newacronym{sil}{SiL}{\gls{SIL}}
+\newacronym[\glsshortpluralkey={PLCs},\glslongpluralkey={PLCs}]{plc}{PLC}{\gls{PLC}}
+\newacronym{fpga}{FPGA}{\gls{FPGA}}
+\newacronym{vi}{VI}{\gls{VI}}
+\newacronym{opc}{OPC}{\gls{OPC}}
+\newacronym{scada}{SCADA}{\gls{SCADA}}
+\newacronym{com}{COM}{\gls{COM}}
+\newacronym{ole}{OLE}{\gls{OLE}}
+\newacronym{devs}{DEVS}{\gls{DEVS}}
+\newacronym{mlpi}{MLPI}{\gls{MLPI}}
+\newacronym{api}{API}{\gls{API}}
+\newacronym{sercos}{\textsc{SERCOS}}{\gls{SERCOS}}
+\newacronym{ethercat}{\textsc{EtherCAT}}{\gls{EtherCAT}}
+\newacronym{dll}{DLL}{\gls{DLL}}
+\newacronym{guid}{GUID}{\gls{GUID}}
+\newacronym{mex}{MEX}{\gls{MEX}}
+\newacronym{sfun}{S-Function}{\gls{SFUN}}
+\newacronym{pdt}{PDT}{\gls{PDT}}
+\newacronym{mes}{MES}{\gls{MES}}
+\newacronym{usp}{USP}{\gls{USP}}
+
+%% Glossareinträge
+\newglossaryentry{RCP}{name={Rapid Control Prototyping},description={Computer-based design method for control systems.}}
+
+\newglossaryentry{MATLAB}{name={MATLAB},description={Commercial software for numerical mathematics.}}
+
+\newglossaryentry{SIMULINK}{name={SIMULINK},description={Commercial software for modelling and simulation of dynamic systems. Supplement to \gls{MATLAB}.}}
+
+\newglossaryentry{STATEFLOW}{name={STATEFLOW},description={Commercial software for modelling and simulation of event-based systems. Supplement to \gls{MATLAB}.}}
+
+\newglossaryentry{Scilab}{name={Scilab},description={Open-Source-Software comparable to \gls{MATLAB}.}}
+
+\newglossaryentry{Xcos}{name={Xcos},description={Open-Source-Software comparable to \gls{SIMULINK}.}}
+
+\newglossaryentry{PLC}{name={Programmable Logic Controller},plural={PLCs}, description={Programmable control system for industrial applications.}}
+
+\newglossaryentry{IECSPS}{name={IEC 61131-3},description={Standard which defines the programming languages of \gls{PLC}-Systems.}}
+
+\newglossaryentry{PLCopen}{name={PLCopen},description={Non-Profit organization participating in the development of automation standards.}}
+
+\newglossaryentry{Mocont}{name={Motion-Controller}, plural={Motion-Controller}, description={Control system capable of controlling motion systems in realtime.}}
+
+\newglossaryentry{Toolbox}{name={Toolbox}, plural={Toolboxes}, description={Extension packages for \gls{MATLAB} or \gls{SIMULINK}.}}
+
+\newglossaryentry{SIL}{name={Software-in-the-Loop},description={Execution of a control algorithm on a development computer, connected to and controlling the real process.}}
+
+\newglossaryentry{HIL}{name={Hardware-in-the-Loop},description={Execution of a control algorithm on the target hardware, connected to and controlling a simulated model of the real process.}}
+
+\newglossaryentry{FPGA}{name={Field Programmable Gateway Array},description={Integrated circuit whose internal function can be defined using a hardware description language.}}
+
+\newglossaryentry{LabView}{name={LabView},description={Graphical programming system developed by National Instruments.}}
+
+\newglossaryentry{TC}{name={TwinCAT},description={Realtime control system developed by Beckhoff.}}
+
+\newglossaryentry{SIMIT}{name={SIMIT},description={Process simulation suite developed by Siemens.}}
+
+\newglossaryentry{OPC}{name={OLE for Process Control},description={Software interface used for the communication between automation systems.}}
+
+\newglossaryentry{STEP7}{name={STEP7},description={Control system development tool for Siemens \gls{PLCs}.}}
+
+\newglossaryentry{SCADA}{name={Supervisory, Control and Data Aquisition},description={Software system for monitoring, control and analysis of industrial processes.}}
+
+\newglossaryentry{COM}{name={Component Object Model},description={Language-independent software interface developed by Microsoft.}}
+
+\newglossaryentry{API}{name={Application Programming Interface}, description={Programming interface to interconnect programs and systems.}}
+
+\newglossaryentry{SERCOS}{name={Serial Realtime Communication System}, description={Ethernet-based, realtime fieldbus.}}
+
+\newglossaryentry{EtherCAT}{name={Ethernet for Control Automation Technology}, sort={Ethercat}, description={Ethernet-based, realtime fieldbus.}}
+
+\newglossaryentry{EthernetIP}{name={\textsc{Ethernet/IP}}, sort={EthernetIP}, description={Ethernet-based, realtime fieldbus.}}
+
+\newglossaryentry{Profinet}{name={\textsc{ProfiNet}}, sort={Profinet}, description={Ethernet-based, realtime fieldbus.}}
+
+\newglossaryentry{shlib}{name={Shared Library}, description={Dynamically loadable software library.}}
+
+\newglossaryentry{handle}{name={Handle}, description={Describes an unique identifier for an object in computer science.}}
+
+\newglossaryentry{pointer}{name={Pointer}, description={Variable which contains an address as it's value.}}
+
+\newglossaryentry{DLL}{name={Dynamic Link Library}, description={Dynamic library. Contents of such a library are only loaded into memory if needed.}}
+
+\newglossaryentry{GUID}{name={Globally Unique Identifier}, description={Globally unique identifier for an object.}}
+
+\newglossaryentry{MEX}{name={Matlab Executable}, description={Compiled file that is executable by \gls{MATLAB}.}}
+
+\newglossaryentry{Socket}{name={Socket}, description={Software module to connect a program to a network for data exchange.}}
+
+\newglossaryentry{SIDN}{name={SERCOS Identification Number},description={Identification number for a parameter.}}
+
+\newglossaryentry{SFUN}{name={System-Function},description={Representation of a \gls{SIMULINK} block in a different programming language.}}
+
+\newglossaryentry{accuracy}{name={Accuracy}, text={accuracy}, description={The total accuracy of e.g. a machine is composed of the \gls{trueness} of it's results and their \gls{precision}.}}
+
+\newglossaryentry{trueness}{name={Trueness}, text={trueness}, description={The absolute deviation of the mean value obtained from a sample set from the true value or reference value. Not to be mistaken for \gls{precision}.}}
+
+\newglossaryentry{precision}{name={Precision}, text={precision}, plural={precisions}, description={The maximum deviation within a set of indepently gathered results from the mean value. Not to be mistaken for \gls{trueness}.}}
+
+\newglossaryentry{MES}{name={Manufacturing Execution System}, description={Computerized system used in manufacturing, to control, track and document the transformation of raw materials to finished goods. It enables the control of multiple elements of the production process (e.g. inputs, personnel, machines and services).}}
+
+\newglossaryentry{prevalidation}{name={Prevalidation}, text={prevalidation}, plural={prevalidations}, description={Prevalidation describes validation steps which are carried out before the actual process (e.g. engraving) has started. Usually, prevalidation steps are used to gather additional data required for the process.}}
+
+\newglossaryentry{postvalidation}{name={Postvalidation},  text={postvalidation}, plural={postvalidations}, description={Postvalidation describes validation steps which are carried out after the actual process (e.g. engraving) has finished. Usually, postvalidation steps are used to verify or check process results.}}
+
+\newglossaryentry{USP}{name={Unique Selling Proposition},description={Refers to the unique benefit exhibited by a company, service, product or brand that enables it to stand out from competitors.}}

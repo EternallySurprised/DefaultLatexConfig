@@ -1,0 +1,219 @@
+%% ============================================================
+%% Global Latex Settings
+%% ============================================================
+\usepackage{xkeyval}					% Key-Value-Support
+\usepackage{verbatim}					% Improvements for verbatim-Umbegungen
+\usepackage{etex}						% to fix '! No room for a new \dimen.' error		
+\usepackage{graphicx}					% Conversion to EPS-format with ImageMagick
+\usepackage{epsfig}						% Import of EPS graphics
+\usepackage{epstopdf}					% Converts EPS files to PDF for import as graphic
+\usepackage{svg}[inkscapeversion=1]		% Add SVG support
+\usepackage{tikz}						% tikz for typesetting of drawings
+\usepackage[utf8]{inputenc}				% UTF8 encoding
+\usepackage[T1]{fontenc}				% Font-Encoding: T1				
+\usepackage{textcomp}					% Companion-Fonts for T1-Encoding
+\usepackage{lmodern} 					% Nicer typography
+\usepackage[headsepline]{scrlayer-scrpage}	% Headers and footers typesetting
+\usepackage[ngerman,english]{babel}		% Language adaptions
+\usepackage{mathtools}					% Extended typesetting for math mode	
+\usepackage{amsmath}					% Math
+\usepackage{amsfonts}					% Math
+\usepackage{amssymb}					% Math
+\usepackage{eurosym}					% Euro Symbol
+\usepackage{upgreek}					% Greek letters in non-italic
+\usepackage[round-mode=places,round-precision=4,locale=US,per-mode=symbol]{siunitx}		% Typesetting values with physical units
+\usepackage{multirow}					% Multi-row tables
+\usepackage{tabularx}					% Better environment for tables
+\usepackage{ltablex}					% Multi-page tabel typesetting
+\usepackage{booktabs}					% Setting line widths in tables
+\usepackage{array}						% More options for tables
+\usepackage{colortbl}					% Colorful tables
+\usepackage{hhline,float}				% Line setting, e.g. for tables
+\usepackage{arydshln}					% Dashed lines support
+\usepackage{color}						% Colorful pages and text	
+\usepackage[hidelinks]{hyperref}		% Typesetting hyperlinks
+\usepackage{cleveref}					% Intelligen references
+\usepackage{paralist}					% Better list environment
+\usepackage{listings}					% Sourcecode listing support
+\usepackage{makeidx,multicol}			% Index creation
+\usepackage{todonotes}					% Annotations/TODOs
+\usepackage[toc,page]{appendix}
+\usepackage{wrapfig}
+\usepackage{pdflscape}
+% ============================================================
+
+% Syntax typesetting for lstlisting
+% ============================================================
+\lstloadlanguages{[Sharp]C,XML,[Visual]C++,C,Matlab}	% Load language support for sourcecode
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+% Colored keyword style
+\lstdefinestyle{Colored}{
+	captionpos=b, 
+	tabsize=4,
+        %basicstyle=\scriptsize,
+	aboveskip={1\baselineskip},
+	belowskip={1\baselineskip},
+        upquote=true,
+        columns=fixed,
+        showstringspaces=false,
+        extendedchars=true,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        frame=single,
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+        keywordstyle=\color[rgb]{0,0,1},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+% Black keyword style
+\lstdefinestyle{BlackKey}{
+	captionpos=b, 
+	tabsize=4,
+        %basicstyle=\scriptsize,
+	aboveskip={1\baselineskip},
+	belowskip={1\baselineskip},
+        upquote=true,
+        columns=fixed,
+        showstringspaces=false,
+        extendedchars=true,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        frame=single,
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+        keywordstyle=\color[rgb]{0,0,0},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+% Selecte default style here
+\lstset{style=Colored}
+% ============================================================
+
+% TIKZ configuration
+% ============================================================
+\usetikzlibrary{shapes}					% Library for tikz: Shapes
+\usetikzlibrary{arrows}					% Library for tikz: Arrows
+\usetikzlibrary{decorations.markings}	% Library for tikz: Line markings
+\usetikzlibrary{mindmap,trees}			% Library for tikz: Mindmaps and tree structures
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{calc}
+% ============================================================
+
+% siunitx configuration/unit definitions
+% ============================================================
+\newcommand{\mm}[1]{\SI{#1}{\milli\metre}}	
+\newcommand{\kg}[1]{\SI{#1}{\kilogram}}
+\DeclareSIUnit{\EUR}{\text{\euro}}
+\DeclareSIUnit{\px}{\text{px}}
+\DeclareSIUnit{\fstop}{\text{f-stop}}
+\DeclareSIUnit{\ev}{\text{EV}}
+% ============================================================
+
+% Typesetting of Glossary and Abbreviations
+% ============================================================
+% No page references, add to ToC, activate symbol list, 
+% Disable empty line for each group, enable abbreviations
+\usepackage[acronym,nonumberlist,toc,symbols,nogroupskip,numberedsection=nameref]{glossaries-extra}	
+% Activate booktabs-tables as glossary style
+\usepackage{glossary-longbooktabs}
+% Disable period at the end of each description
+\renewcommand*{\glspostdescription}{}
+% ============================================================
+
+% BibTex configuration
+% ============================================================
+\usepackage[numbers,square,sort]{natbib}	% For natural scientific citing style
+\usepackage{usebib}
+\bibliographystyle{ieeetr}					% IEEE-style for BibTex
+%\bibliographystyle{dinat}					% Din-style for BibTex
+%\bibliographystyle{plaindin}				% Sorted by author, numerical references 
+%\bibliographystyle{alphadin}				% Sorted by author, author initials as reference
+%\bibliographystyle{abbrvdin}				% Like plaindin, author first names abbreviated 
+\usepackage{breakcites}						% Correct breaks in citations
+% ============================================================
+
+% KOMAscript Options
+% ============================================================
+\KOMAoption{toc}{listof}			% Add table and figure lists into ToC
+\KOMAoption{bibliography}{totoc}	% Add literature to ToC
+% ============================================================
+
+%% Definition of colors
+% ============================================================
+\definecolor{darkgray}{gray}{0.55}		% global color
+\definecolor{lightgray}{gray}{0.85}		% global color
+% ============================================================
+
+% Settings for headers and footers
+% ============================================================
+% \automark[section]{chapter} % Double-sided documents
+\automark{section}
+% ============================================================
+
+% Custom Commands
+% ============================================================
+\newcommand{\udl}{\underline}					% Unterline
+\newcommand{\ohm}{\Omega}						% Ohm-Symbol
+\newcommand{\myindex}[1]{#1\index{#1}}			% Print and add to indext in one command
+\newcommand{\reqid}[1]{\hypertarget{#1}{#1}}	% Requirement-ID: Print and Label with single command
+\newcommand{\refreq}[1]{\hyperlink{#1}{#1}}		% Reference to a Requirement - Set label in text
+% ============================================================
+
+% Company-specific
+% ============================================================
+\newcommand{\companyName}{\textbf{Eternally Surprised}}		% Company Name
+% ============================================================
+
+% Table commands for requirement spec. documents
+% ============================================================
+\newcolumntype{i}{b{1.5cm}}													% ID-Column
+\newcolumntype{o}{>{\raggedright\arraybackslash\hsize=.18\hsize}X}			% Optional-Column
+\newcolumntype{n}{>{\raggedright\arraybackslash\hsize=.22\hsize}X}			% Name-Column
+\newcolumntype{d}{>{\raggedright\arraybackslash\hsize=.60\hsize}X}			% Requirement-Description-Column
+% ============================================================
+
+% New command: \includegraphicstotab[..]{..}
+% ============================================================
+% Usage analog to \includegraphics
+\newlength{\myx} % Image width
+\newlength{\myy} % Image heiht
+\newcommand\includegraphicstotab[2][\relax]{%
+	% Abspeichern der Bildabmessungen
+	\settowidth{\myx}{\includegraphics[{#1}]{#2}}%
+	\settoheight{\myy}{\includegraphics[{#1}]{#2}}%
+	% das eigentliche Einfügen
+	\parbox[c][1.1\myy][c]{\myx}{%
+	\includegraphics[{#1}]{#2}}%
+}
+% ============================================================
+
+% New itemization environments
+% ============================================================
+\newenvironment{compactitemize}{% 
+\vspace{0.2cm}
+\begin{compactitem}
+}{%
+\end{compactitem}
+\vspace{0.2cm}
+}
+\newenvironment{compactenumerate}{% 
+\vspace{0.2cm}
+\begin{compactenum}
+}{%
+\end{compactenum}
+\vspace{0.2cm}
+}
+% ============================================================
+
+% ToC Configuration
+% ============================================================
+\setcounter{tocdepth}{2}			% Levels below \chapter in the ToC
+\setcounter{secnumdepth}{3} 		% Number of numerical levels
+\setlength{\extrarowheight}{1pt} 	% Additional line spacing in tables
+% ============================================================

@@ -1,0 +1,33 @@
+%% ============================================================
+%% First Sample Chapter
+%% ============================================================
+
+\chapter{\myindex{First Sample Chapter}}	%% Define a chapter
+\label{chap:FirstSampleChapter}				%% Label the chapter - so you can reference it elsewhere
+Here is some text. We can use a topic referenced in the glossary by marking it. Like here for a \gls{precision}.
+\\
+\\
+You can just put your text here. Latex takes care of all the nice formatting and stuff. Trust me, it's better than we humans are.
+\\
+\\
+There might also be abbreviations (maybe also with glossary entries associated). An example: \gls{plc}.
+\\
+\\
+You can also make things appear in the index later on, like this \myindex{Index Entry}.
+\\
+\\
+Equations are also very nice. Like defining an uncorrected point cloud which might be: 
+% 
+ \begin{equation}
+	P=\left\{ P_0, P_1,..., Pn \right\} \text{ for } n \in \mathrm{N} \text{ with } P_n \in \mathbb{R}^2
+ \end{equation}
+ %
+ with:
+ %
+  \begin{equation}
+ P_n=\left(\begin{array}{c}x_n\\ y_n\end{array}\right)
+  \end{equation}
+%
+\\
+\\
+And of course you can also reference sources defined in the bibliography - like a pretty awesome book \cite{adams:hitchhikersguide} - which will then also appear in the bibliography.

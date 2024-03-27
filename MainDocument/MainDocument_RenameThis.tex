@@ -1,0 +1,106 @@
+%% ============================================================
+%% How to typeset this document manually:
+%% ============================================================
+% 1. pdflatex
+% 2. BibTex
+% 3. MakeIndex
+% 4. MakeGlossaries
+% 5. pdflatex
+% 6. MakeIndex
+% 7. MakeGlossaries
+% 8. 2x pdflatex
+%% ============================================================
+%% Make it possible for Arara to automatically run all typesetting steps as described above
+%% ============================================================
+% arara: pdflatex: { synctex: yes, shell: yes }
+% arara: bibtex
+% arara: makeindex
+% arara: makeglossaries
+% arara: pdflatex: { synctex: yes }
+% arara: makeindex
+% arara: makeglossaries
+% arara: pdflatex: { synctex: yes }
+% arara: pdflatex: { synctex: yes }
+%% ============================================================
+
+%% Define document
+%% ============================================================
+%\documentclass[12pt, a4paper, oneside, bibliography=totoc, ngerman]{scrreprt}  %% Uncomment for a German document
+\documentclass[12pt, a4paper, oneside, bibliography=totoc, ]{scrreprt}  		%% Uncomment for an English document
+
+%% Title and Subtitle
+%% ============================================================
+\newcommand\doctype{Sample Document}
+\newcommand\doctitle{Default LaTeX Setup}
+
+%% Document Version
+%% ============================================================
+\newcommand\majorversion{1}
+\newcommand\minorversion{0}
+\newcommand\buildversion{0}
+
+%% Include standard settings/package definitions from global repo
+%% ============================================================
+%\input{../LatexGlobal/00_Settings_DE} 	%% Uncomment for a German document
+\input{../LatexGlobal/00_Settings_EN} 		%% Uncomment for an English document
+
+%% Include glossary entries from global repo
+%% ============================================================
+%\input{../LatexGlobal/00_Glossaryentries_DE}	%% Uncomment for a German document
+\input{../LatexGlobal/00_Glossaryentries_EN}	%% Uncomment for an English document
+
+%% Include glossary entries specific to this document
+%% ============================================================
+\input{00_LocalGlossaryentries}
+
+%% Include symbol entries from file
+%% ============================================================
+%% \input{SYMBOLFILE HERE!}
+
+%% Create Index and Glossaries initially
+%% ============================================================
+\makeindex			
+\makeglossaries	
+
+%% Use hyperref package to set document metadata
+%% ============================================================
+\hypersetup{
+	pdftitle={\doctype \\ \doctitle \\ V\majorversion.\minorversion.\buildversion},
+	pdfauthor=\companyName,
+	pdfsubject={\doctype \\ \doctitle}
+}
+
+\bibinput{Bibliography}
+
+% MAIN DOCUMENT
+%% ============================================================
+\begin{document}
+	% Title Page
+	% ----------------------------
+	\include{00_Titelpage}
+	
+	% Pre-TOC Pages
+	% ----------------------------
+	\pagenumbering{Roman}
+	\include{00_Abstract}
+
+	% Create table of contents
+	% ----------------------------
+	\tableofcontents			
+
+	% Create Lists of Abbreviations and Symbols
+	% ----------------------------
+	\include{00_Abbreviations}
+
+	% CHAPTERS
+	% ----------------------------
+	\pagenumbering{arabic}
+	\include{01_SampleChapter}
+	\include{02_SampleChapter}
+
+	% Appendices
+	% ----------------------------
+	\include{99_Glossary}		% Glossary
+	\include{99_Literature} 	% Literature, Tables, Figures, Sourcecode
+	\include{99_Index}			% Index
+\end{document}

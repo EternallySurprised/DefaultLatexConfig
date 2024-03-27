@@ -1,0 +1,12 @@
+%% ======================================================================
+%% Generates the list of abbreviations used in the document.
+%% Generates the list of symbols used in the document.
+%% It's (usually) not required to add or change anything here.
+%% ======================================================================
+% Abbreviation List
+\printglossary[title=Abbreviations, toctitle=Abbreviations, type=\acronymtype, style=listgroup]
+
+% Symbol List
+\renewcommand{\glossarypreamble}{\glsfindwidesttoplevelname[\currentglossary]}
+\renewcommand*{\arraystretch}{1.5} % default is 1
+\printglossary[title=List of Symbols, toctitle=List of Symbols,type=symbols,style=long-booktabs]

@@ -1,0 +1,90 @@
+%% ============================================================
+%% Second Sample Chapter
+%% ============================================================
+
+\chapter{\myindex{Second Sample Chapter}}	%% Chapter definition (also linked to the index immediately).
+\label{chap:solution}			%% Chapter label for reference
+\section{Overview}				%% Section definition within chapter
+\label{sec:overview}			%% Also this gets a label
+This is the first section in this chapter.
+
+\section{\myindex{Process}}
+\label{sec:process}
+We can also combine stuff to put a glossary entry also in the index for referencing for example a \myindex{\gls{pointer}}.
+
+\subsection{\myindex{Problems}}
+This here is a subsection to the section \ref{sec:overview}.
+You can also add images:
+\begin{figure}[!h]	%% h! specifies that the image shall appear at exactly that spot
+ \centering
+  \includegraphics[width=5cm]{../LatexGlobal/images/CompanyLogo}	%% Image path
+  \caption{The current company logo}								%% Caption
+  \label{fig:companylogo}											%% Label
+\end{figure}
+\\
+Of course, you can also add tables. That's a bit cumbersome, so it is advised to use an online editor like the \emph{Tables Editor}\footnote{\url{https://www.tablesgenerator.com/}}. It is also possible to convert Excel spreadsheets into Latex code using a converter\footnote{\url{https://tableconvert.com/Excel-Converter/excel-to-latex-table.html}}.
+Such a table could look like this:
+
+\begin{tabularx}{\textwidth}{ i o n d }
+	\caption{Some example table}
+	\label{tab:ExampleTable1}\\
+	\toprule
+	\multicolumn{1}{b{1em}}{\textbf{ID}} &
+	\multicolumn{1}{b{1em}}{\textbf{Mandatory \newline Optional \newline Alternate}} &
+	\multicolumn{1}{b{1em}}{\textbf{Name}} &
+	\multicolumn{1}{b{1em}}{\textbf{Requirement}} \\
+	\midrule
+	\endhead
+	% Sample Requirement - Change or delete as you wish
+	% ----------------------------------------------------------------------
+	\reqid{RXxxxx} & Mandatory & Test A & REQUIREMENT TEXT\\
+	\midrule
+	
+	\reqid{RXxxxx} & Mandatory & Test A & Lorem ipsum dolor met sit amet Lorem ipsum dolor met sit amet\\
+	\midrule
+	
+	\reqid{RXxxxx} & Mandatory & Test A & Lorem ipsum dolor met sit amet Lorem ipsum dolor met sit amet\\
+	\midrule
+		
+	\reqid{RXxxxx} & Mandatory & Test A & Lorem ipsum dolor met sit amet Lorem ipsum dolor met sit amet\\
+	\midrule
+
+	\reqid{RXxxxx} & Mandatory & Test A & Lorem ipsum dolor met sit amet Lorem ipsum dolor met sit amet\\
+	\midrule
+	% ----------------------------------------------------------------------
+	
+	% ADD REQUIREMENTS HERE
+	
+	% End of table
+	% ----------------------------------------------------------------------
+	\bottomrule
+\end{tabularx}
+
+\clearpage
+
+And you can also put nicely formatted source code into the document:
+\lstset{style=Colored, language=[Sharp]C}
+\begin{footnotesize}
+\begin{lstlisting}[caption=\emph{DataEncodingFactory} - \emph{CreateNewInstance}]
+/// <summary>
+/// Creates a new instance of IDataEncoding. The type returned
+/// depends on the version information in the provided code.
+/// </summary>
+/// <param name="code">Code containing version and payload.</param>
+/// <returns>Instance according given version.</returns>
+public virtual IDataEncoding CreateNewInstance(string code)
+{
+	if (!Regex.IsMatch(code, VERSION_FROM_CODE_REGEX))
+		throw new ArgumentException("Code does not contain version.");
+
+	switch (GetVersion(code))
+	{
+	case "02":
+		return new Base.QRCode.CodeV2.DataV2Encoding();
+	default:
+		return null;
+	}
+}
+\end{lstlisting}
+\end{footnotesize}
+\clearpage

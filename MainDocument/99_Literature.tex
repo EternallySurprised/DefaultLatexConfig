@@ -1,0 +1,25 @@
+%% ======================================================================
+%% Generates the lists of tables, figures and listings.
+%% Also generates the bibliography/references
+%% It's (usually) not required to add or change anything here.
+%% ======================================================================
+% List of tables
+\listoftables
+\clearpage
+
+% List of figures
+\listoffigures
+\clearpage
+
+% Sourcecode
+% Comment this out if you have no sourcecode listings
+\renewcommand\lstlistlistingname{Sourcecode listings}
+\lstlistoflistings
+\clearpage
+
+% Bibliography
+\defcaptionname{english}{\refname}{References}
+\defcaptionname{english}{\bibname}{References}
+%\nocite{*}	% Puts all references in bibliography, even if not cited anywhere
+\bibliography{../LatexGlobal/DefaultBibliography}
+\clearpage

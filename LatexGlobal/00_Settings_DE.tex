@@ -1,0 +1,264 @@
+%% ============================================================
+%% Global Latex Settings
+%% ============================================================
+\usepackage{xkeyval}					% Key-Value-Unterstützung
+\usepackage{verbatim}					% Verbesserungen an verbatim-Umbegungen
+\usepackage{etex}						% um den Fehler '! No room for a new \dimen.' zu vermeiden			
+\usepackage{graphicx}					% Konvertierung in EPS-Format mit ImageMagick
+\usepackage{epsfig}						% Paket zum Einbinden von EPS Grafikdateien
+\usepackage{epstopdf}					% Konvertiert EPS-Dateien in PDF zwecks Einbindung als Grafik
+\usepackage{svg}[inkscapeversion=1]		% SVG Unterstützung
+\usepackage{tikz}						% Paket tikz zum Setzen von Zeichungen
+\usepackage[utf8]{inputenc}				% UTF8-Codierung statt Latin 1
+\usepackage[T1]{fontenc}				% Font-Encoding: T1				
+\usepackage{textcomp}					% Companion-Fonts für T1-Encoding
+\usepackage{lmodern} 					% Schönere Typo
+\usepackage[headsepline]{scrlayer-scrpage}	% Paket zum Setzen von Kopf- und Fusszeilen
+\usepackage[ngerman]{babel}		% Paket für Sprachanpassung
+\usepackage{mathtools}					% Erweiterte Satzhilfen für Mathematikmodus	
+\usepackage{amsmath}					% Paket zum Setzen von mathematischen Formeln
+\usepackage{amsfonts}					% Paket zum Setzen von mathematischen Formeln
+\usepackage{amssymb}					% Paket zum Setzen von mathematischen Formeln
+\usepackage{eurosym}					% Euro-Symbol
+\usepackage{upgreek}					% griechische Buchstaben in normaler Schrift (nicht italic)
+\usepackage[round-mode=places,round-precision=4,locale=DE,per-mode=symbol]{siunitx}		% Paket zum Zahlendarstellung mit Einheiten (primär SI)
+\usepackage{multirow}					% Paket für mehrreihige Tabellen
+\usepackage{tabularx}					% Bessere Tabellenumgebung
+\usepackage{ltablex}					% Paket zum Setzen von Tabellen, die über mehrere Seiten gehen
+\usepackage{booktabs}					% Paket zum Setzen von Liniendicken in Tabellen	
+\usepackage{array}						% Mehr Optionen für Tabellen
+\usepackage{colortbl}					% Paket zum Setzen von farbigen Tabellen
+\usepackage{hhline,float}				% Paket zum Setzen von Linien z.B. in Tabellen
+\usepackage{arydshln}					% Paket zum Setzen von gestrichelten Linien
+\usepackage{color}						% Paket zum Setzen von farbigen Seiten und Text		
+\usepackage[hidelinks]{hyperref}		% Paket zum Setzen von Hyperlinks
+\usepackage{cleveref}					% Paket für "intelligente" Referenzen
+\usepackage{paralist}					% Paket für verbesserte Listenumgebung
+\usepackage{listings}					% Paket für Quelltext-Listings
+\usepackage{makeidx,multicol}			% Paket zum Erzeugen des Stichwortverzeichnisses
+\usepackage[ngerman]{todonotes}					% Paket für Annotationen/TODOs
+\usepackage[toc,page]{appendix}
+\usepackage{wrapfig}
+\usepackage{pdflscape}
+%\usepackage{url}
+% ============================================================
+% Syntaxdarstellung mittels lstlisting konfigurieren
+% ============================================================
+\lstloadlanguages{[Sharp]C,XML,[Visual]C++,C,Matlab}	% Sprachunterstützung für Quelltexte laden
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+% Stil mit farbigen Keywörtern
+\lstdefinestyle{Colored}{
+	captionpos=b, 
+	tabsize=4,
+        %basicstyle=\scriptsize,
+	aboveskip={1\baselineskip},
+	belowskip={1\baselineskip},
+        upquote=true,
+        columns=fixed,
+        showstringspaces=false,
+     	inputencoding=utf8,
+        extendedchars=true,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        frame=single,
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+        keywordstyle=\color[rgb]{0,0,1},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+% Stil mit schwarzen Keywörtern
+\lstdefinestyle{BlackKey}{
+	captionpos=b, 
+	tabsize=4,
+        %basicstyle=\scriptsize,
+	aboveskip={1\baselineskip},
+	belowskip={1\baselineskip},
+        upquote=true,
+        columns=fixed,
+        showstringspaces=false,
+      	inputencoding=utf8,
+        extendedchars=true,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        frame=single,
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+        keywordstyle=\color[rgb]{0,0,0},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+% Standardstil wählen
+\lstset{style=Colored}
+% SPS-Programmierung
+\lstset{language=Pascal}
+\lstset{
+	style=Colored,
+	morekeywords={FUNCTION_BLOCK,VAR_INPUT,VAR_OUTPUT,VAR_IN_OUT,END_VAR, INT, BOOL, END_FOR, END_IF}
+}
+% JSON Syntaxhighlights
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+\lstdefinelanguage{json}{
+	basicstyle=\normalfont\ttfamily,
+	numbers=left,
+	numberstyle=\scriptsize,
+	stepnumber=1,
+	numbersep=8pt,
+	showstringspaces=false,
+	breaklines=true,
+	frame=lines,
+	literate=
+	*{0}{{{\color{numb}0}}}{1}
+	{1}{{{\color{numb}1}}}{1}
+	{2}{{{\color{numb}2}}}{1}
+	{3}{{{\color{numb}3}}}{1}
+	{4}{{{\color{numb}4}}}{1}
+	{5}{{{\color{numb}5}}}{1}
+	{6}{{{\color{numb}6}}}{1}
+	{7}{{{\color{numb}7}}}{1}
+	{8}{{{\color{numb}8}}}{1}
+	{9}{{{\color{numb}9}}}{1}
+	{:}{{{\color{punct}{:}}}}{1}
+	{,}{{{\color{punct}{,}}}}{1}
+	{\{}{{{\color{delim}{\{}}}}{1}
+	{\}}{{{\color{delim}{\}}}}}{1}
+	{[}{{{\color{delim}{[}}}}{1}
+	{]}{{{\color{delim}{]}}}}{1},
+}
+% ============================================================
+
+% TIKZ konfigurieren
+% ============================================================
+\usetikzlibrary{shapes}					% Library für tikz zum Setzen von Formen
+\usetikzlibrary{arrows}					% Library für tikz zum Setzen von Pfeilen
+\usetikzlibrary{decorations.markings}	% Library für tikz zim Setzen von Linienmarkierungen
+\usetikzlibrary{mindmap,trees}			% Library für tikz zum Setzen von Mindmaps
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{calc}
+% ============================================================
+
+% siunitx konfigurieren/neue Einheiten definieren
+% ============================================================
+\newcommand{\mm}[1]{\SI{#1}{\milli\metre}}
+\newcommand{\kg}[1]{\SI{#1}{\kilogram}}
+\DeclareSIUnit{\EUR}{\text{\euro}}
+\DeclareSIUnit{\px}{\text{px}}
+\DeclareSIUnit{\fstop}{\text{f-stop}}
+\DeclareSIUnit{\ev}{\text{EV}}
+% ============================================================
+
+% Setzen des Glossars und Abk.-Verz. konfigurieren
+% ============================================================
+% Ohne Seitenangaben, Im Inhaltsverz., Symbolliste aktivieren, 
+% Leerzeile je Gruppe deaktivieren, Abkürzungen aktivieren
+\usepackage[acronym,nonumberlist,toc,symbols,nogroupskip,numberedsection=nameref]{glossaries-extra}	
+% Booktabs-Tabellen als Glossarstil aktivieren
+\usepackage{glossary-longbooktabs}
+% Den Punkt am Ende jeder Beschreibung im Glossar deaktivieren
+\renewcommand*{\glspostdescription}{}
+% ============================================================
+
+% BibTex konfigurieren
+% ============================================================
+\usepackage[numbers,square,sort]{natbib}	% Für Naturwissenschaftliche Zitierweise
+\usepackage{usebib}
+\bibliographystyle{ieeetr}					% IEEE-Stil für BibTex
+%\bibliographystyle{dinat}					% Din-Stil für BibTex
+%\bibliographystyle{plaindin}				% Verz. n. Autor sortiert, Referenzen numerisch 
+%\bibliographystyle{alphadin}				% Verz. n. Autor sortiert, Referenzen aus Autorenkürzel 
+%\bibliographystyle{abbrvdin}				% Wie plaindin, Autorenvornamen abgekürzt 
+\usepackage{breakcites}						% Korrekte Umbrüche in Zitaten
+% ============================================================
+
+% KOMAscript Optionen
+% ============================================================
+\KOMAoption{toc}{listof}			% Tabellen- und Abbildungsverzeichnisse mit ins Inhaltsverzeichnis aufnehmen
+\KOMAoption{bibliography}{totoc}	% Literaturverzeichnis ins Inhaltsverzeichnis aufnehmen
+% ============================================================
+
+%% Definition von Farben
+% ============================================================
+\definecolor{darkgray}{gray}{0.55}		% globale Farbdefinition
+\definecolor{lightgray}{gray}{0.85}		% globale Farbdefinition
+% ============================================================
+
+% Einstellungen für die Kopf- und Fußeilen
+% ============================================================
+% \automark[section]{chapter} % Zweiseitige Dokumente
+\automark{section}
+% ============================================================
+
+% Eigene Befehle
+% ============================================================
+\newcommand{\udl}{\underline}					% Unterstrich
+\newcommand{\ohm}{\Omega}						% Ohm-Symbol
+\newcommand{\myindex}[1]{#1\index{#1}}			% Gleichzeitiger Ausdruck und Aufnahme in den Index
+\newcommand{\reqid}[1]{\hypertarget{#1}{#1}}	% Requirement-ID: Ausdruck und Label gleichzeitig
+\newcommand{\refreq}[1]{\hyperlink{#1}{#1}}		% Verweis auf Requirement - Setzt Label im Text
+% ============================================================
+
+% Firmenspezifisch
+% ============================================================
+\newcommand{\companyName}{\textbf{Eternally Surprised}}		% Company Name
+% ============================================================
+
+% Tabellenbefehle für Spezifikationen
+% ============================================================
+\newcolumntype{i}{b{1.5cm}}													% ID-Spalte
+\newcolumntype{o}{>{\raggedright\arraybackslash\hsize=.18\hsize}X}			% Optional-Spalte
+\newcolumntype{n}{>{\raggedright\arraybackslash\hsize=.22\hsize}X}			% Namen-Spalte
+\newcolumntype{d}{>{\raggedright\arraybackslash\hsize=.60\hsize}X}			% Requirement-Description-Spalte
+\newcolumntype{e}{>{\raggedright\arraybackslash\hsize=.33\hsize}X}			% Requirement-Description-Spalte
+% ============================================================
+
+% neuer Befehl: \includegraphicstotab[..]{..}
+% ============================================================
+% Verwendung analog wie \includegraphics
+\newlength{\myx} % Variable zum Speichern der Bildbreite
+\newlength{\myy} % Variable zum Speichern der Bildhöhe
+\newcommand\includegraphicstotab[2][\relax]{%
+	% Abspeichern der Bildabmessungen
+	\settowidth{\myx}{\includegraphics[{#1}]{#2}}%
+	\settoheight{\myy}{\includegraphics[{#1}]{#2}}%
+	% das eigentliche Einfügen
+	\parbox[c][1.1\myy][c]{\myx}{%
+	\includegraphics[{#1}]{#2}}%
+}
+% ============================================================
+
+% Cleverref für Listings vorbereiten
+\crefname{lstlisting}{Listing}{Listings}
+\Crefname{lstlisting}{Listing}{Listings}
+
+% Neue Aufzählungs-Umgebungen
+% ============================================================
+\newenvironment{compactitemize}{% 
+\vspace{0.2cm}
+\begin{compactitem}
+}{%
+\end{compactitem}
+\vspace{0.2cm}
+}
+\newenvironment{compactenumerate}{% 
+\vspace{0.2cm}
+\begin{compactenum}
+}{%
+\end{compactenum}
+\vspace{0.2cm}
+}
+% ============================================================
+
+% Inhaltsverzeichnis konfigurieren
+% ============================================================
+\setcounter{tocdepth}{2}			%Anzahl der Ebenen unterhalb von \chapter im Inhaltsverzeichnis
+\setcounter{secnumdepth}{3} 		%Anzahl der nummerierten Ebenen
+\setlength{\extrarowheight}{1pt} 	%Zusätzlicher Zeilenabstand in Tabellen
+% ============================================================
